@@ -4,7 +4,7 @@ This repository contains movie data collected from Indian theaters from various 
 # Challanges 
 1. Data Collection
    As source data is not publicly available with good quality, Significant effort and time consumed on data collection.
-     theatre_data -> Collected indian movie theatre data from source - https://github.com/HarshaDevulapalli/indian-movie-theatres
+     theatre_data -> Fetched indian movie theatre data from IMDB API. Source - https://github.com/HarshaDevulapalli/indian-movie-theatres
    
      imdb data -> Collected indian movie datasets using api from source - https://developer.imdb.com/non-commercial-datasets/
 
