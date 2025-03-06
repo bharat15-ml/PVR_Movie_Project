@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Seat Prediction</title>
+</head>
+<body>
+    <h1>Movie Seat Prediction</h1>
+
+    <button onclick="openLinearRegressionWindow()">Predict with Linear Regression</button>
+    <button onclick="openRandomForestWindow()">Predict with Random Forest</button>
+
+    <script>
+        function openLinearRegressionWindow() {
+            window.open('linear_regression.html', '_blank', 'width=500,height=400');
+        }
+
+        function openRandomForestWindow() {
+            window.open('random_forest.html', '_blank', 'width=500,height=400');
+        }
+    </script>
+</body>
+</html>

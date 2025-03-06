@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Seat Prediction</title>
+</head>
+<body>
+    <h1>Movie Seat Prediction</h1>
+    <form id="prediction-form">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city"><br><br>
+
+        <label for="type">Movie Type:</label>
+        <input type="text" id="type" name="type"><br><br>
+
+        <label for="average_ticket_price">Average Ticket Price:</label>
+        <input type="number" id="average_ticket_price" name="average_ticket_price"><br><br>
+
+        <label for="profit_margin">Profit Margin:</label>
+        <input type="number" id="profit_margin" name="profit_margin"><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <div id="prediction-result">
+        <h2>Prediction Result:</h2>
+        <p id="predicted-seats"></p>
+    </div>
+
+    <script>
+        const form = document.getElementById('prediction-form');
+        const resultDiv = document.getElementById('prediction-result');
+        const predictedSeats = document.getElementById('predicted-seats');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const data = {
+                city: form.city.value,
+                type: form.type.value,
+                average_ticket_price: parseFloat(form.average_ticket_price.value),
+                profit_margin: parseFloat(form.profit_margin.value)
+            };
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
