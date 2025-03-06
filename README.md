@@ -12,7 +12,7 @@ This repository contains movie data collected from Indian theaters from various 
 4. Data Exploration/understnding -> As no single source of truth or information available to lay down business problem and solutions collected data from various sources to lay down business foundation.
 5. Theatre and IMDB Data -> It doesn't captures theatre and movie specfic info at sync so joining various source info seems not possible. This makes data mining process more difficult to find insightful pattern.
 
-# Problem Staement - 
+# Problem Statements - 
 Predict #seats in theatre at any point of time based on movies and other meaningful features. (Based on available data extracted meaningful features and tried to predict number of seates.)
 
 # Solution - ML Prdicton model to predict #seats.
