@@ -1,0 +1,10 @@
+# Important EDA steps, Objective and outcome.
+
+
+1. theatre_eda.ipynb => This python notebook is having task related to theatre data exploration and cleaning. End result will be a processed theatre_cleaned.csv file.
+
+2. imdb_movies_eda.ipynb => This python notebook is having task related to imdb_indian_movies.csv data exploration and cleaning. End result will be a processed imdb_indian_movies-1.csv file which is used for merging with other file i.e. indian_movies-1.csv.
+
+3. indian_movies_eda.ipynb => This python notebook is having task related to indian_movies data exploration and cleaning. End result will be a processed indian_movies-1.csv file. which further merged with
+ imdb_indian_movies-1.csv file based on year and movie_name column to give end result as two csv file
+- imdb_indian_merged.csv and imdb_indian_merged_fe.csv file for further analysis and ml-model building.
