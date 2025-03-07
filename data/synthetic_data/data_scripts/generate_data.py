@@ -2,7 +2,7 @@ import pandas as pd
 import random
 
 # Load the existing dataset
-file_path = "theatre_cleaned.csv"  # Update with your file path
+file_path = "PVR_Movie_Project/data/processed_data/theatre_cleaned.csv"  # Update with your file path
 df_existing = pd.read_csv(file_path)
 
 # Define possible values for new columns
@@ -20,7 +20,14 @@ for _ in range(5000):
     row = df_existing.sample(n=1, replace=True).iloc[0].to_dict()  # Sample an existing row
     row["Indian Movie Name"] = random.choice(indian_movies)
     row["Showtime"] = random.choice(showtimes)
-    row["IMDB Rating"] = round(random.uniform(1, 10), 1)  # Random IMDb rating between 1-10
+
+    # IMDb rating info collected from imdb offical websites
+    movie_imdb_ratings = {
+    "3 Idiots": 8.4, "Dangal": 8.3, "Drishyam 2": 8.2, "RRR": 7.8,
+    "Kantara": 7.7, "KGF 2": 7.3, "Vikram": 7.3, "Pushpa": 7.4,
+    "Baahubali": 8.0, "Shershaah": 8.4, "Kabir Singh": 7.1, "Pathaan": 6.3,
+    "Brahmastra": 5.6, "Jawan": 7.0, "Sooryavanshi": 6.5 }  
+    
     row["Weather"] = random.choice(weather_conditions)
     row["Holiday/Event Impact"] = random.choice(holiday_impact)
     
@@ -34,7 +41,7 @@ for _ in range(5000):
 df_expanded = pd.DataFrame(expanded_data)
 
 # Save the new dataset to CSV
-df_expanded.to_csv("theatre_seat_prediction.csv", index=False)
+df_expanded.to_csv("../theatre_seat_prediction.csv", index=False)
 
 print("CSV file generated successfully!")
 
