@@ -1,5 +1,13 @@
 # PVR_Movie_Project
-This repository contains movie data collected from Indian theaters from various sources. Also, it showcases state-of-the-art (POC) of applying advanced data analytics to building ML Models to optimize business processes and provide solutions.
+PVR Movie Dataset - Seat Prediction
+
+This repository contains a dataset of PVR movie theater bookings, designed for building predictive models to estimate the number of seats booked for a given show. The dataset includes features such as movie name, show timing, theater location, past booking trends, day of the week, and special events.
+
+🔹 Key Features:
+Historical movie ticket booking data
+Factors influencing seat occupancy (e.g., time, location, events)
+Suitable for regression and time-series forecasting models
+📌 Use this dataset to develop machine learning models for predicting seat availability and optimizing theater occupancy! 🎬🍿
 
 # Challanges 
 1. Data Collection
