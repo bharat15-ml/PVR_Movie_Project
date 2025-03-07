@@ -41,5 +41,7 @@ For predicting the number of occupied seats in a theatre, you can consider the f
 5. Hybrid Approaches
       Combine XGBoost (for feature importance) with LSTM (for time-dependent trends).
       Use Random Forest/XGBoost for initial predictions and fine-tune with Neural Networks for better generalization.
-# Recommended Approach:
-Start with Random Forest/XGBoost for a strong baseline. If sequential trends are important, explore LSTM or SARIMA for better forecasting.
+# Recommended Approach: (Continuing...)
+      Start with Random Forest/XGBoost for a strong baseline. If sequential trends are important, explore LSTM or SARIMA for better forecasting.
+      Linear Regression – Simple and interpretable but may not capture complex relationships.
+      Decision Tree Regressor – Captures non-linear relationships but may overfit.
