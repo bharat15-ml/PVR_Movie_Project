@@ -9,18 +9,18 @@ Factors influencing seat occupancy (e.g., time, location, events)
 Suitable for regression and time-series forecasting models
 📌 Use this dataset to develop machine learning models for predicting seat availability and optimizing theater occupancy! 🎬🍿
 
-# Challanges 
-1. Data Collection
-   As source data is not publicly available with good quality, Significant effort and time consumed on data collection.
-     theatre_data -> Fetched indian movie theatre data from IMDB API. Source - https://github.com/HarshaDevulapalli/indian-movie-theatres
-   
-     imdb data -> Collected indian movie datasets using api from source - https://developer.imdb.com/non-commercial-datasets/
+# Challenges Faced
+Data Collection – High-quality, publicly available data is scarce, requiring significant time and effort for data gathering.
 
-3. Data Quality -> Not much theatre specific data publicaly available to lay down solution appraoch for business use cases. Important parameters and attributes seems missing or not recorded at single instance of time.
-4. Data Cleaning -> As it have significant data quality issues, significant efforts has been put on data cleaning.
-5. Data Exploration/understnding -> As no single source of truth or information available to lay down business problem and solutions, So we tried collecting data from various sources to lay down business use case and problem/solution.
+Theatre Data: Indian movie theatre data was fetched using the IMDB API.
+IMDB Data: Indian movie datasets were collected via the IMDB API.
+Data Quality – Theatre-specific data is limited, making it difficult to design a robust business solution. Critical parameters and attributes are either missing or not recorded consistently at a single point in time.
 
-7. Theatre and IMDB Data -> It doesn't captures theatre and movie specfic info at sync, so joining various source info seems not possible. This makes data mining process more difficult to find insightful pattern.
+Data Cleaning – Due to significant data quality issues, extensive cleaning was required to ensure accuracy and consistency.
+
+Data Exploration & Understanding – No single source of truth exists for theatre and movie data, making it challenging to define business problems and solutions. We had to aggregate data from multiple sources to establish a viable use case.
+
+Theatre & IMDB Data Integration – Theatre and movie-specific data are not synchronized across sources, making it difficult to join datasets. This lack of alignment complicates the data mining process and hinders the discovery of meaningful patterns.
 
 # Problem Statements - 
 Predict #seats in theatre at any point of time based on movies and other meaningful features. (Based on available data extracted meaningful features and tried to predict number of seates.)
