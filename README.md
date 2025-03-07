@@ -22,7 +22,7 @@ Data Exploration & Understanding – No single source of truth exists for theatr
 
 Theatre & IMDB Data Integration – Theatre and movie-specific data are not synchronized across sources, making it difficult to join datasets. This lack of alignment complicates the data mining process and hinders the discovery of meaningful patterns.
 
-# Problem Statements - 
-Predict #seats in theatre at any point of time based on movies and other meaningful features. (Based on available data extracted meaningful features and tried to predict number of seates.)
+# Problem Statement
+Develop a predictive model to estimate the number of occupied seats in a theatre at any given time based on movie-specific and other relevant features. Using the available data, meaningful features were extracted to enhance prediction accuracy and identify patterns influencing seat occupancy.
 
 # Solution - ML Prdicton model to predict #seats.
