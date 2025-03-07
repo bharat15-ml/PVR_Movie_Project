@@ -2,7 +2,7 @@ import pandas as pd
 import random
 
 # Load the existing dataset
-file_path = "/home/singh/Desktop/PVR_Movie_Project/data/processed_data/theatre_cleaned.csv"  # Update with the correct file path if needed
+file_path = "PVR_Movie_Project/data/processed_data/theatre_cleaned.csv"  # Update with the correct file path if needed
 df_existing = pd.read_csv(file_path)
 
 # Define movie details with IMDb rating, genre, release date, production, cast, director, budget, and revenue
@@ -93,7 +93,7 @@ for _ in range(5000):
 
 # Create new DataFrame and save to CSV
 df_expanded = pd.DataFrame(expanded_data)
-df_expanded.to_csv("./../theatre_seat_prediction.csv", index=False)
+df_expanded.to_csv("theatre_seat_prediction.csv", index=False)
 
 print("CSV file generated successfully with complete movie details!")
 
