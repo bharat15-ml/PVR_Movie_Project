@@ -2,7 +2,7 @@ import pandas as pd
 import random
 
 # Load the existing dataset
-file_path = "PVR_Movie_Project/data/processed_data/theatre_cleaned.csv"  # Update with the correct file path if needed
+file_path = "PVR_Movie_Project/data/synthetic_data/theatre_cleaned.csv"  # Update with the correct file path if needed
 df_existing = pd.read_csv(file_path)
 
 # Define movie details with IMDb rating, genre, release date, production, cast, director, budget, and revenue
