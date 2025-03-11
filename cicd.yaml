@@ -1,0 +1,78 @@
+name: CI/CD Pipeline for PVR_Movie_Proj API
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            --tag ${{ secrets.DOCKER_USERNAME }}/pvr_movie_proj-api:latest \
+            .
+
+      - name: Push Docker image to Docker Hub
+        run: |
+          docker push ${{ secrets.DOCKER_USERNAME }}/pvr_movie_proj-api:latest
+
+  deploy-to-kubernetes:
+    name: Deploy to Kubernetes
+    runs-on: ubuntu-latest
+    needs: build-and-push  
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
+    - name: Set up kubectl and EKS
+      run: |
+        aws eks update-kubeconfig --name feb-k8s --region us-east-1
+        kubectl cluster-info
+    
+#    - name: Setup Kubeconfig
+#      run: |
+#        mkdir -p $HOME/.kube
+#        echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
+#        chmod 600 $HOME/.kube/config
+#        export KUBECONFIG=$HOME/.kube/config
+#        kubectl cluster-info
+
+    - name: Apply Kubernetes Manifests
+      run: |
+        kubectl apply -f deployment.yaml
