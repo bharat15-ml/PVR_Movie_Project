@@ -1,1 +1,39 @@
 # kubernetes ML deployment yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pvr-movie-api-deployment
+  labels:
+    app: pvr-movie-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pvr-movie-api
+  template:
+    metadata:
+      labels:
+        app: pvr-movie-api
+    spec:
+      containers:
+      - name: iris-api
+        #image: registry.hub.docker.com/bharat15/pvr_movie_proj-api:latest
+        image: bharat15/iris-ml-api 
+        ports:
+        - containerPort: 4000
+        env:
+        - name: FLASK_ENV
+          value: development
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pvr-movie-api-service
+spec:
+  selector:
+    app: pvr-movie-api
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 4000
+  type: LoadBalancer
